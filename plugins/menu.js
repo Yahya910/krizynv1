@@ -6,35 +6,35 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-╭───◪ 〔 ${namabot} 〕 
-⬡ ${ucapan()}
-⬡ Hello bro
+╭──◪ 〔 شـينــوبــو بــوت 〕 
+⬡ 🇲🇦${ucapan()}
+⬡ 🇲🇦مرحبا
 ╰────────⬣
-╭───◪ 〔  𝙇 𝙄 𝙈 𝙄 𝙏  〕
-┃⬡ Limit *%limit Limit*
-┃⬡ Role *%role*
-┃⬡ Level *%level (%exp / %maxexp)* 
+╭───◪ 〔  حــد  〕
+┃⬡ 🇲🇦حد *%limit Limit*
+┃⬡ 🇲🇦دور *%role*
+┃⬡ 🇲🇦مستوى *%level (%exp / %maxexp)* 
 ┃⬡ [%xp4levelup]
-┃⬡ %totalexp XP secara Total
+┃⬡ 🇲🇦مجموع النقاط XP secara Total
 ╰────────⬣
-╭───◪ 〔 𝙏𝙄𝙈𝙀 𝘼𝙉𝘿 𝘿𝘼𝙏𝙀 〕
-┃⬡ Date: *%week %weton* 
-┃⬡ Tanggal : *%date*
-┃⬡ Waktu: *%time*
+╭───◪ الساعة و التاريخ 〕
+┃⬡ 🇲🇦التاريخ: *%week %weton* 
+┃⬡ 🇲🇦ليوم : *%date*
+┃⬡ 🇲🇦التوقيت : *%time*
 ╰────────⬣
-╭───◪ 〔  𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀  〕
-┃⬡ Uptime: *%uptime (%muptime)*
-┃⬡ Database: %rtotalreg dari %totalreg 
+╭───◪ 〔  الداتا  〕
+┃⬡ 🇲🇦Uptime: *%uptime (%muptime)*
+┃⬡ 🇲🇦Database: %rtotalreg dari %totalreg 
 ╰────────⬣
 
-────֍ 〔 𝗙𝗜𝗧𝗨𝗥 𝗕𝗢𝗧 〕 ֍────
+────֍ 〔 خاصيات البوت 〕 ֍────
 
 `
 .trimStart(),
   header: '╭─֍ 〔 %category 〕 ֍─',
   body: '┃⬡ %cmd %islimit %isPremium',
   footer: '╰────────֍\n',
-  footerText:'𝗚𝗼𝘂𝗿𝗮𝘃 ×͜×', 
+  footerText:'ايانوكوجي', 
   after: `${namabot}
 `,
 }
@@ -228,186 +228,73 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                         "title": `${ucapan()}
 Hello, ${name}`.trim(),
           "description": `
-┏━━〔 𝙎 𝙏 𝘼 𝙏 𝙐 𝙎 〕━֍
-┃⬣ Aktif selama *${uptime}*
-┃⬣ Baterai *${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}*
-┃⬣ *${Object.keys(global.db.data.users).length}* Pengguna
-┃⬣ *${totaljadibot.length}* Jadibot
-┃⬣ *${conn.blocklist.length}* Terblock
-┃⬣ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-┃⬣ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+┏━━〔 حالة البوت 〕━֍
+┃⬣ 💜يشتغل منذ *${uptime}*
+┃⬣ ❤️B *${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}*
+┃⬣ 💜*${Object.keys(global.db.data.users).length}* Pengguna
+┃⬣ ❤️*${totaljadibot.length}* Jadibot
+┃⬣ 💜*${conn.blocklist.length}* Terblock
+┃⬣ ❤️*${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
+┃⬣ 💜*${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 ┗━━━━━━━━━━━━━━֍
-┏━━〔 𝘼𝘾𝘾𝙊𝙐𝙉𝙏 𝙊𝙒𝙉𝙀𝙍 〕━֍
-┃⬣ IG : instagram.com/dark_devil_3609
-┃⬣ 
-┃⬣ 𝘿𝙊𝙉'𝙏 𝙁𝙊𝙍𝙂𝙀𝙏 𝙏𝙊 𝙁𝙊𝙇𝙇𝙊𝙒𝙄𝙉𝙂!
+┏━◪ 〔 حساب المطور 〕━֍
+┃⬣ IG : instagram.com/_kopz__
+┃⬣ للشراء بوت خاص بك تواصل مع المطور!
 ┗━━━━━━━━━━━━━━֍`.trim(),
-                        "footerText": "Bot created by 𝗚𝗼𝘂𝗿𝗮𝘃\n𝙊𝙬𝙣𝙚𝙧",
-                        "buttonText": "Gourav",
+                        "footerText": "بوت صنع من طرف ايانوكوجي",
+                        "buttonText": "ايــانوكــوجــي",
                         "listType": "SINGLE_SELECT",
                         "sections": [
                             {
                                 
                                 "rows": [{
-                                    "title": `[ ☇ ] ꜱ ᴇ ᴍ ᴜ ᴀ  ᴘ ᴇ ʀ ɪ ɴ ᴛ ᴀ ʜༀ`,
-									"description": "✓ 𝙈𝙚𝙢𝙗𝙚𝙧𝙞𝙠𝙖𝙣 𝙎𝙚𝙢𝙪𝙖 𝙁𝙞𝙩𝙪𝙧 𝘽𝙤𝙩ᴹᴿ𝗚𝗼𝘂𝗿𝗮𝘃 ×፝֟͜×",
+                                    "title" : "[ ☇ ] قائمة المطور",
+									"description": "✓ الكــــل",
 									"rowId": ".? all"
-								}, {
-									"title": "[ ☇ ] ɪ ꜱ ʟ ᴀ ᴍༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙏𝙚𝙣𝙩𝙖𝙣𝙜 𝙄𝙨𝙡𝙖𝙢 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝗚𝗼𝘂𝗿𝗮𝘃 ×፝֟͜×",
-									"rowId": ".? quran"
-								}, {
-									"title": "[ ☇ ] ᴇ ᴅ ᴜ ᴋ ᴀ ꜱ ɪༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙀𝙙𝙪𝙠𝙖𝙨𝙞 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? edukasi"
-								}, {
-									"title": "[ ☇ ] ɴ ᴇ ᴡ ꜱༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘽𝙚𝙧𝙞𝙩𝙖 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? News"
-								},  {
-									"title": "[ ☇ ] ɢ ᴀ ᴍ ᴇༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? game"
-								}, {
-									"title": "[ ☇ ] ᴇ ᴘ ɪ ᴄ  ʀ ᴘ ɢༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙂𝙖𝙢𝙚 𝙍𝙋𝙂 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? rpg"
-								}, {
-									"title": "[ ☇ ] x ᴘༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙓𝙋 𝘿𝙖𝙣 𝙇𝙚𝙫𝙚𝙡 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? xp"
-								},  {
-									"title": "[ ☇ ] ɴ ꜱ ꜰ ᴡༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘼𝙨𝙪𝙥𝙖𝙣 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? nsfw"
-								}, {
-									"title": "[ ☇ ] ʀ ᴀ ɴ ᴅ ᴏ ᴍ  ɪ ᴍ ᴀ ɢ ᴇༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙁𝙤𝙩𝙤 𝙍𝙖𝙣𝙙𝙤𝙢 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? image"
-							}, {
-									"title": "[ ☇ ] ꜱ ᴛ ɪ ᴋ ᴇ ʀༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘽𝙪𝙖𝙩 𝙎𝙩𝙞𝙠𝙚𝙧 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? stiker"
-								}, {
-									"title": "[ ☇ ] ᴋ ᴇ ʀ ᴀ ɴ ɢ  ᴀ ᴊ ᴀ ɪ ʙༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙈𝙚𝙣𝙪𝙧𝙪𝙩 𝙆𝙚𝙧𝙖𝙣𝙜 𝙖𝙟𝙖𝙞𝙗 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? kerangajaib"
-								}, {
-									"title": "[ ☇ ] Q ᴜ ᴏ ᴛ ᴇ ꜱༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙌𝙪𝙤𝙩𝙚𝙨 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? quotes"
-								}, {
-									"title": "[ ☇ ] ᴀ ᴅ ᴍ ɪ ɴༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘼𝙙𝙢𝙞𝙣 𝙂𝙧𝙤𝙪𝙥 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? admin"
-								}, {
-									"title": "[ ☇ ] ɢ ʀ ᴜ ᴘༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙂𝙧𝙤𝙪𝙥 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? grup"
-								}, {
-									"title": "[ ☇ ] ᴘ ʀ ᴇ ᴍ ɪ ᴜ ᴍༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙐𝙣𝙩𝙪𝙠 𝙋𝙧𝙚𝙢𝙞𝙪𝙢 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? premium"
-								}, {
-									"title": "[ ☇ ] ɪ ɴ ᴛ ᴇ ʀ ɴ ᴇ ᴛༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘾𝙖𝙧𝙞 𝙎𝙚𝙨𝙪𝙖𝙩𝙪 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? internet"
-								}, {
-									"title": "[ ☇ ] ᴀ ɴ ᴏ ɴ ʏ ᴍ ᴏ ᴜ ꜱༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙈𝙖𝙞𝙣𝙠𝙖𝙣 𝘼𝙣𝙤𝙣𝙮𝙢𝙤𝙪𝙨 𝘾𝙝𝙖𝙩 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? anonymous"
-								}, {
-									"title": "[ ☇ ] ɴ ᴜ ʟ ɪ ꜱ  &  ʟ ᴏ ɢ ᴏༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙉𝙪𝙡𝙞𝙨 & 𝙇𝙤𝙜𝙤 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? nulis"
-								}, {
-									"title": "[ ☇ ] ᴅ ᴏ ᴡ ɴ ʟ ᴏ ᴀ ᴅ ᴇ ʀༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙎𝙚𝙨𝙪𝙖𝙩𝙪 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? downloader"
-								}, {
-									"title": "[ ☇ ] ᴛ ᴏ ᴏ ʟ ꜱༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙏𝙤𝙤𝙡𝙨 𝙔𝙖𝙣𝙜 𝘽𝙞𝙨𝙖 𝙙𝙞 𝙂𝙪𝙣𝙖𝙠𝙖𝙣 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? tools"
-								}, {
-									"title": "[ ☇ ] ꜰ ᴜ ɴༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘾𝙚𝙧𝙞𝙖 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? fun"
-								}, {
-									"title": "[ ☇ ] ᴅ ᴀ ᴛ ᴀ ʙ ᴀ ꜱ ᴇༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙎𝙞𝙢𝙥𝙖𝙣 𝙎𝙚𝙨𝙪𝙖𝙩𝙪 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? database"
-								}, {
-									"title": "[ ☇ ] ᴠ ᴏ ᴛ ᴇ  &  ᴀ ʙ ꜱ ᴇ ɴༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙑𝙤𝙩𝙚 & 𝘼𝙗𝙨𝙚𝙣 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? vote"
-								}, {
-									"title": "[ ☇ ] ᴘ ᴇ ɴ ɢ ᴜ ʙ ᴀ ʜ  ꜱ ᴜ ᴀ ʀ ᴀༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙐𝙗𝙖𝙝 𝙎𝙪𝙖𝙧𝙖 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? audio"
-								}, {
-									"title": "[ ☇ ] ᴊ ᴀ ᴅ ɪ  ʙ ᴏ ᴛༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙅𝙖𝙙𝙞 𝘽𝙤𝙩 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? jadibot"
-								}, {
-									"title": "[ ☇ ] ᴀ ɴ ɪ ᴍ ᴇༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝘾𝙖𝙧𝙞 𝘼𝙣𝙞𝙢𝙚 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? anime"
-								}, {
-									"title": "[ ☇ ] ɪ ɴ ꜰ ᴏༀ",
-									"description": "✓ 𝙄𝙣𝙛𝙤 𝙏𝙚𝙣𝙩𝙖𝙣𝙜 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? info"
-								}, {
-									"title": "[ ☇ ] ᴛ ᴀ ɴ ᴘ ᴀ  ᴋ ᴀ ᴛ ᴇ ɢ ᴏ ʀ ɪༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙠𝙤𝙨𝙤𝙣𝙜 𝘿𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
-									"rowId": ".? tanpakategori"
-								}, {
+								
 									"title": "[ ☇ ] ᴏ ᴡ ɴ ᴇ ʀༀ",
-									"description": "✓ 𝙈𝙚𝙣𝙪 𝙆𝙝𝙪𝙨𝙪𝙨 𝙊𝙬𝙣𝙚𝙧ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
+									"description": "✓ المطور ×፝֟͜×",
 									"rowId": ".? owner"
                                 }],
                                 "title": "──────────────❲  ᗩᒪᒪ ᗰEᑎᑌ  ❳──────────────"
                             }, {
 								"rows": [{
                                     "title": "[ ☇ ] ꜱ ᴛ ᴀ ᴛ ᴜ ꜱ  ʙ ᴏ ᴛ",
-                                    "description": "✓ 𝙎𝙩𝙖𝙩𝙪𝙨 𝙙𝙖𝙣 𝙞𝙣𝙛𝙤𝙧𝙢𝙖𝙨𝙞 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
+                                    "description": "✓ حالة البوت×፝֟͜×",
                                     "rowId": ".botstatus"
                                 }, {
                                     "title": "[ ☇ ] ʀ ᴜ ʟ ᴇ ꜱ",
-                                    "description": "✓ 𝙐𝙨𝙚𝙧 𝙮𝙖𝙣𝙜 𝙗𝙞𝙟𝙖𝙠 𝙨𝙚𝙡𝙖𝙡𝙪 𝙢𝙚𝙢𝙖𝙩𝙪𝙝𝙞 𝙍𝙪𝙡𝙚𝙨 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
+                                    "description": "✓ قوانين البوت لضمان عدم الحظر×፝֟͜×",
                                     "rowId": ".rules"
                                 }, {
                                     "title": "[ ☇ ] ꜱᴇᴡᴀ  ʙᴏᴛ  ᴏʀ  ᴘʀᴇᴍɪᴜᴍ",
-                                    "description": "✓ 𝙐𝙣𝙩𝙪𝙠 𝙮𝙖𝙣𝙜 𝙞𝙣𝙜𝙞𝙣 𝙢𝙚𝙡𝙞𝙝𝙖𝙩 𝙝𝙖𝙧𝙜𝙖 𝙨𝙚𝙬𝙖 𝙙𝙖𝙣 𝙥𝙧𝙚𝙢𝙞𝙪𝙢 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
+                                    "description": "✓ العضوية و الحصول على البوت ×፝֟͜×",
                                     "rowId": ".sewabot"
 								}, {	
                                     "title": "[ ☇ ] ᴏ ᴡ ɴ ᴇ ʀ  ʙ ᴏ ᴛ",
-                                    "description": "✓ 𝙋𝙚𝙢𝙞𝙡𝙞𝙠 𝘽𝙤𝙩ᴹᴿ𝙄𝙩𝙨𝙠𝙧𝙞 ×፝֟͜×",
+                                    "description": "✓ المطور ×፝֟͜×",
                                     "rowId": ".owner"
                                 }, {
                                     "title": "[ ☇ ] ᴅ ᴏ ɴ ᴀ ꜱ ɪ",
-                                    "description": "✓ 𝘿𝙤𝙣𝙖𝙨𝙞 𝙪𝙣𝙩𝙪𝙠 𝙢𝙚𝙣𝙙𝙪𝙠𝙪𝙣𝙜 𝙗𝙤𝙩 𝙖𝙜𝙖𝙧 𝙖𝙠𝙩𝙞𝙛 𝙨𝙚𝙡𝙖𝙡𝙪",
+                                    "description": " الدفع للحصولعلى البوت",
                                     "rowId": ".donasi"
                                 }, {
-                                    "title": "ᴋ ᴀ ᴛ ᴀ  ᴘ ᴇ ɴ ᴜ ᴛ ᴜ ᴘ",
-                                    "description": "✓ 𝙏𝙚𝙧𝙞𝙢𝙖𝙠𝙖𝙨𝙞𝙝 𝙪𝙣𝙩𝙪𝙠 𝙪𝙨𝙚𝙧 𝙮𝙖𝙣𝙜 𝙩𝙚𝙡𝙖𝙝 𝙢𝙚𝙣𝙜𝙜𝙪𝙣𝙖𝙠𝙖𝙣 𝙗𝙤𝙩, 𝙟𝙞𝙠𝙖 𝙖𝙙𝙖 𝙠𝙚𝙨𝙖𝙡𝙖𝙝𝙖𝙣 𝙖𝙩𝙖𝙪 𝙥𝙚𝙧𝙢𝙞𝙣𝙩𝙖𝙖𝙣 𝙗𝙞𝙨𝙖 𝙘𝙝𝙖𝙩 𝙠𝙚 𝙣𝙤𝙢𝙤𝙧 𝙤𝙬𝙣𝙚𝙧",
-                                    "rowId": ".owner"
-                                }, {
-                                    "title": "ᴛ ʜ ᴀ ɴ ᴋ ꜱ  ɢ ᴇ ɴ ɢ",
-                                    "description": "✓ 𝙏𝙚𝙧𝙞𝙢𝙖 𝙠𝙖𝙨𝙞𝙝 𝙗𝙖𝙣𝙮𝙖𝙠 𝙪𝙣𝙩𝙪𝙠 𝙪𝙨𝙚𝙧 𝙮𝙖𝙣𝙜 𝙩𝙚𝙡𝙖𝙝 𝙗𝙚𝙧𝙥𝙖𝙧𝙩𝙞𝙨𝙞𝙥𝙖𝙨𝙞 𝙙𝙖𝙡𝙖𝙢 𝙗𝙤𝙩",
+                                    "title": "ᴛ ʜ ᴀ ɴ ᴋ ꜱ  ",
+                                    "description": "✓ شكرا ل",
                                     "rowId": ".tqto"
                                 }],
-                                "title": "──────────────❲ ᑭEᑎᑌTᑌᑭ ❳──────────────"
+                                "title": "──────────────❲ ايــانوکــوجي ❳──────────────"
                             }
                         ], "contextInfo": 
 						{ "stanzaId": m.key.id,
                         "participant": "0@s.whatsapp.net",
-                        "remoteJid": "918089152280-1614953337@g.us",
+                        "remoteJid": "212693222334@g.us",
                         "quotedMessage": m.message
 						}
                     }
                  }, {}), {waitForAck: true})
     }
-    // gunakan ini jika kamu menggunakan whatsapp bisnis
+    //
     //   throw `
     // ┌〔 DAFTAR MENU 〕
     // ├ ${_p + command} all
