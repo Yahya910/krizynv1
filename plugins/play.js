@@ -33,7 +33,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 ⬣*حجم الفيديو:* ${yt2.filesizeF}
 ⬣*سرفر التحميل:* ${usedServer}
 ╰────────⬣
-`.trim(), footer, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`, m)
+`.trim(), footer, 'اوديو', `.yta ${vid.url}`, 'فيديو', `.yt ${vid.url}`, m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
