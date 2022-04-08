@@ -12,14 +12,14 @@ let handler = async(m, { conn, usedPrefix, command }) => {
   let ar = res.result.ar
 	 	let hasil = `${ar.teks}
 	${teks}
-	Surat : ${surat}
-	Ayat : ${ayat}`.trim()
+	سورة : ${surat}
+	اية : ${ayat}`.trim()
 
     conn.sendButton(m.chat, hasil, footer, 'Quran Random', `${usedPrefix + command}`, m)
 }
 handler.help = ['randomquran']
 handler.tags = ['islam']
-handler.command = /^randomquran/i
+handler.command = /^قرأن/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
